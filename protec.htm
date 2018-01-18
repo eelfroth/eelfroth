@@ -13,6 +13,7 @@
     .center { text-align: center; padding-top: 1em; }
     a { color: #ddd; text-decoration: none; }
     a:hover { color: #fff; }
+    input { background: #222; color: #fff; border: 0px; padding: 0.3em; }
   </style>
 </head>
 <body>
@@ -37,7 +38,7 @@
         e.preventDefault();
 
         var passphrase = document.getElementById('staticrypt-password').value,
-            encryptedMsg = '92fcbbd5286d0ed45f166c61d71600620e509d148c721bf40e2d42a4ce12338aU2FsdGVkX19G+ktYp8QLFFiTiYiGwMTDysbrmKQ+pQIwmCVL9yOcoY+UTkv7GaMlZUSFW6fX+Yqdlpi6UiWHqcjqLrCKR5sRwL6XSAcIJgoAkzsffJXha1TXqJjcOfkbCEMzaKyhYJXPpNz8xIqlG4HMad5z3Kc0+xp8ZVMp8wr9GAfgTi2SWmeYt7FKZhB1wW0miQ+NIMJaL93IFYAU/ASoGawCReXvnileYAZeMllcqUVaICSgJ4/U0sTJaARX8Xq9rGlszvclfuzhjR+v1JtB4fc3kc8qRj+v9hynvRoMU1lM3vZ1aHVEGVgVRl9/LZDPeDlhCEW0KpZeHGEJ07nnk/XPYHuOI5B1mSO4WL71d2DBgCYaLi0dEJOSKt3AF7LF8eTQVDgL6OC6+LOQzK7M6Pc8UeLPnkl5XrYIa8bQJPmbOwCyBFWkxDxWzftK5u6p8g/nFAuMLyVnZL6boMGUbBbmv8CEXoGBUqrazGfHApLlVk/GkQYTDSQq6j/j3uR8JaffLdbtduzO8pGFfkic7n1yGnqCbCnA4pLi+PTok/9skXvYZiqrPG9Ssx2JkalbgD0i/qs4Sxsf6W+7wgUPyJQbrSOC5YhfmLC+/xxgpUJtlRX+sz3NkctC238NZEPUWnGf/Su+5SEI/ad2tE1Mv4nX5//zlf44guw0symz6JIXnfF2qzEVofL7eI5sYQwqBaU0pr8x8tqnlSf1zBDbhr0pSPqrGA8D2vM1ux6HQ+Hq57xYxl1XJ50iHXaeGo7wJh00NwEluaaAS+l1BuRtLfm3dW0y54RCc+nBhTVcZsJ62giiSTaO52QaMsuMh75dhkvH6CB/r6l/aAKFow==',
+            encryptedMsg = '88e555e6a6a80df115295df85d6643b7c3319b66e875c2b3a88a794496c1f967U2FsdGVkX1/PSXaizYLmDnAdQq4PmSalsPJf4LguON2FL6WwexeLX4RTKyw+TOUygyvM2nw/tjUGIv6OSqE7boD9X2ShKyYNQUwEWpV+aV29uFp9q4L+9EZ7Zv/YS18dSxKpb2H+KnKFLoyA+o7P2DME4I93TiBe9yWx1iNM3r3v0P6G43RBzVFTrJluK/IPHMJx4ZT+39AjGAv+7OIjPjggQ/vlX6YTID9sPcOGE3LDoV7FrE6gvXfdHXg9FpOePc+nhdVaS/RIxPbZg8nQu9wjYxtg1Mk4OZvfXyC6lJs1wiVLn/MclWtQYkBFmaywTX5RyX7W3H6oTguZFS8umRs72GIUTlY94Gi9IhCja00D333dIR80M4Hp8ZAe0pd7w9Tfa+V9mge1Aqj+JAb3fThEhHq420hzkJ81QUFYhaLeYD511u3z5hu04uhFSGt6Aug+m0Z3/pbnbArYwAT8c2xvNM6/nUbFZQ5aGZjJivpgnXa0rfboUkhtyArxPx1BNcVBK9FfJJZ8/vy3i3oaX6YbKZTRns+IhoSdmUFLGfayaBGyeQ1IRAmXosMoRXtNLGnEPYFSkv5gcDpp3sQEs+7a/P3I69BovLhd6NcZWLBzeQ8otbnNIxK4H2Yjm1yMKfktPG4mkVZqcJ+ZT2g6OjZts8Lzro9x9RsWqCRYvXJ3YiLYyvjaYZmSflA//KTvlm0W9mVXhJ+TVr4mW/R8vpGnlBJlNrQWgwZp6wPW/mqMpdUKysLdKwGsS4ErsjWU73ictft2+jXDG8jwQK8kL+N4BcX6OKCc8Y6FtV48J/a7DEhodnKbgJYs3vV38F1T',
             encryptedHMAC = encryptedMsg.substring(0, 64),
             encryptedHTML = encryptedMsg.substring(64),
             decryptedHMAC = CryptoJS.HmacSHA256(encryptedHTML, CryptoJS.SHA256(passphrase).toString()).toString();
